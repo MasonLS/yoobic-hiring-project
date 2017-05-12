@@ -4,6 +4,7 @@ import { Platform, MenuController, Nav } from 'ionic-angular';
 
 import { SignInPage } from '../pages/sign-in/sign-in';
 import { ListPage } from '../pages/list/list';
+import { SignInService } from '../services/sign-in.service';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -22,14 +23,16 @@ export class MyApp {
     public platform: Platform,
     public menu: MenuController,
     public statusBar: StatusBar,
-    public splashScreen: SplashScreen
+    public splashScreen: SplashScreen,
+    private signInService: SignInService
   ) {
     this.initializeApp();
-
+    
     // set our app's pages
     this.pages = [
       { title: 'Sign In', component: SignInPage },
-      { title: 'My First List', component: ListPage }
+      { title: 'List', component: ListPage },
+      { title: 'Chat', component: null}
     ];
   }
 

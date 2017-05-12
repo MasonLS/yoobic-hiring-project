@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { NavController } from 'ionic-angular';
+import { NavController, MenuController } from 'ionic-angular';
 
 import { ListPage } from '../list/list';
 
@@ -9,11 +9,19 @@ import { ListPage } from '../list/list';
   templateUrl: 'sign-in.html'
 })
 export class SignInPage {
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController, public menu: MenuController) {
+    
+  }
 
+  ionViewWillEnter(): void {
+    this.menu.swipeEnable(false);
+  }
+
+  ionViewDidLeave(): void {
+    this.menu.swipeEnable(true);
   }
 
   buttonPressed(): void {
-      this.navCtrl.push(ListPage);
+    this.navCtrl.push(ListPage);
   }
 }

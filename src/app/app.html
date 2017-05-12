@@ -1,19 +1,22 @@
-<ion-menu [content]="content">
-
-  <ion-header>
-    <ion-toolbar>
-      <ion-title>Pages</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
+<ion-menu type="push" [content]="content">
   <ion-content>
-    <ion-list>
-      <button ion-item *ngFor="let p of pages" (click)="openPage(p)">
-        {{p.title}}
-      </button>
-    </ion-list>
+    <ion-grid padding>
+      <ion-row justify-content-center>
+        <ion-col text-center>
+          <ion-icon style="font-size: 90px" name="person"></ion-icon>
+        </ion-col>
+      </ion-row>
+      <ion-row justify-content-center>
+        <ion-col col-10>
+          <ion-list>
+            <button ion-item *ngFor="let p of pages" (click)="openPage(p)">
+              <ion-icon name="image" item-start></ion-icon>
+              {{p.title}}
+            </button>
+          </ion-list>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
   </ion-content>
-
 </ion-menu>
-
 <ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
