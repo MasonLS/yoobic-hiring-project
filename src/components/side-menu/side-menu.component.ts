@@ -3,7 +3,7 @@ import { Component, ViewChild } from '@angular/core';
 import { MenuController, Nav } from 'ionic-angular';
 
 import { SignInPage } from '../../pages/sign-in/sign-in';
-import { ListPage } from '../../pages/list/list';
+import { MasterListPage } from '../../pages/master-list/master-list';
 
 @Component({
     selector: 'side-menu',
@@ -17,7 +17,7 @@ export class SideMenuComponent {
     constructor(public menu: MenuController) {
         this.pages = [
             { title: 'Sign In', component: SignInPage },
-            { title: 'My First List', component: ListPage }
+            { title: 'Master List', component: MasterListPage }
         ];
     }
 
