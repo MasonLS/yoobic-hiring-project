@@ -22,6 +22,17 @@ export class PeopleService {
         return this.http.get(url)
             .toPromise()
             .then(response => response.json().results as Person[])
+            .then(people => {
+                return Promise.all(people.map(person => {
+                    return this.http.get(person.homeworld)
+                        .toPromise()
+                        .then(response => response.json())
+                        .then(homeworld => {
+                            person.homeworldName = homeworld.name;
+                            return person;
+                        });
+                }))
+            })
             .catch(this.handleError);
     }
 

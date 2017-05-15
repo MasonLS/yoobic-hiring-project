@@ -40,6 +40,7 @@ export class MasterListPage {
   doInfinite(infiniteScroll): void {
     this.pageNum++;
     this.getPeople()
-      .then(() => infiniteScroll.complete());
+      .then(() => infiniteScroll.complete())
+      .catch(() => infiniteScroll.complete());
   }
 }

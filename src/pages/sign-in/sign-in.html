@@ -1,16 +1,16 @@
 <ion-header></ion-header>
-<ion-content padding>
+<ion-content class="content" padding>
   <ion-grid>
     <ion-row justify-content-center>
         <ion-col col-sm-8 col-md-6 col-lg-4>
-            <h1 style="text-align: center;">Sign In</h1>
-            <ion-list>
+            <h1 style="text-align: center; color: #44C3AA;">Sign In</h1>
+            <ion-list class="list">
                 <ion-item>
-                    <ion-label color="primary">Email</ion-label>
-                    <ion-input type="email"></ion-input>
+                    <ion-label color="secondary">Email</ion-label>
+                    <ion-input color="secondary" type="email"></ion-input>
                 </ion-item>
                 <ion-item>
-                    <ion-label color="primary">Password</ion-label>
+                    <ion-label color="secondary">Password</ion-label>
                     <ion-input type="password"></ion-input>
                 </ion-item>
                 <ion-item>
@@ -19,10 +19,10 @@
             </ion-list>
             <ion-row>
                 <ion-col text-center col-5 offset-1>
-                    <button ion-button round outline block (click)="buttonPressed()">Sign Up</button>
+                    <button color="secondary" ion-button round outline block (click)="buttonPressed()">Sign Up</button>
                 </ion-col>
                 <ion-col text-center col-5>
-                    <button ion-button round block (click)="buttonPressed()">Sign In</button>
+                    <button color="secondary" ion-button round block (click)="buttonPressed()">Sign In</button>
                 </ion-col>
             </ion-row>
         </ion-col>
