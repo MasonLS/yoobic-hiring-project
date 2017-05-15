@@ -10,7 +10,7 @@
 <ion-content class="content">
   
   <ion-list>
-    <person-card *ngFor="let person of people" [person]="person" (click)="personTapped($event, person)"></person-card>
+    <person-card *ngFor="let person of people" [person]="person"></person-card>
   </ion-list>
   
   <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
