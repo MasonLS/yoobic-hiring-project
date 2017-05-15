@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-navbar color="light">
+    <ion-title>Message To: {{person.name}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-grid>
+        
+        <ion-row justify-content-space>
+            <ion-col>
+                <ion-list>
+                    <ion-item>
+                        <ion-label color="primary">Subject</ion-label>
+                        <ion-input type="text"></ion-input>
+                    </ion-item>
+
+                    <ion-item>
+                        <ion-label color="primary" fixed>Message</ion-label>
+                        <ion-textarea placeholder="Wish may the Force be with them!"></ion-textarea>
+                    </ion-item>
+                    <ion-item>
+                    </ion-item>
+                </ion-list>
+            </ion-col>
+        </ion-row>
+
+        <button color="primary" ion-button (click)="dismiss()">Send</button>
+        <button color="danger" ion-button (click)="dismiss()">Cancel</button>
+        
+    </ion-grid>
+</ion-content>
