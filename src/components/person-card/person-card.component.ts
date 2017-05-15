@@ -1,22 +1,41 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
+import { NavController } from 'ionic-angular';
+
+import { PersonDetailsPage } from '../../pages/person-details/person-details';
+import { PeopleService } from '../../services/people.service';
 import { Person } from '../../person';
 
 @Component({
     selector: 'person-card',
     templateUrl: 'person-card.component.html'
 })
-export class PersonCardComponent {
+export class PersonCardComponent implements OnInit {
     @Input()
     person: Person;
     title: string;
+    homeworld: object = {name: ''};
 
-    getTitle(){
-        const birthYear = +this.person.birth_year.slice(0, this.person.birth_year.length - 3);
-        const age = birthYear + 4;
+    constructor(public navCtrl: NavController, private peopleService: PeopleService) {}
+
+    ngOnInit(): void {
+        const age = this.peopleService.getAge(this.person);
+        
         if (isNaN(age)) {
-            return this.person.name;
+            this.title = this.person.name;
+        } else {
+            this.title = `${this.person.name}, ${age}`;
         }
-        return `${this.person.name}, ${age}`;
+
+        this.peopleService.getHomeworld(this.person)
+            .then(homeworld => this.homeworld = homeworld);
     }
+
+    personTapped(event): void {
+        this.navCtrl.push(PersonDetailsPage, {
+            person: this.person,
+            homeworld: this.homeworld
+        });
+    }
+
 }

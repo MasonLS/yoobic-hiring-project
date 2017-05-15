@@ -22,17 +22,18 @@ export class PeopleService {
         return this.http.get(url)
             .toPromise()
             .then(response => response.json().results as Person[])
-            .then(people => {
-                return Promise.all(people.map(person => {
-                    return this.http.get(person.homeworld)
-                        .toPromise()
-                        .then(response => response.json())
-                        .then(homeworld => {
-                            person.homeworldName = homeworld.name;
-                            return person;
-                        });
-                }))
-            })
+            .catch(this.handleError);
+    }
+
+    getAge(person: Person): number {
+        const birthYear = +person.birth_year.slice(0, person.birth_year.length - 3);
+        return birthYear + 4;
+    }
+
+    getHomeworld(person: Person): Promise<object> {
+        return this.http.get(person.homeworld)
+            .toPromise()
+            .then(response => response.json())
             .catch(this.handleError);
     }
 

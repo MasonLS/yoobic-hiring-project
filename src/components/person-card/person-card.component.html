@@ -1,15 +1,15 @@
-<ion-card>
+<ion-card (click)="personTapped($event)">
     <img src="http://www.placecage.com/300/200">  
   <ion-card-content>
     <ion-item>
         <ion-icon *ngIf="person.gender === 'female'" name="female" item-left></ion-icon>
         <ion-icon *ngIf="person.gender === 'male'" name="male" item-left></ion-icon>
         <ion-icon *ngIf="person.gender === 'n/a'" name="logo-android" item-left></ion-icon>
-        <ion-card-title>{{getTitle()}}</ion-card-title>
+        <ion-card-title>{{title}}</ion-card-title>
     </ion-item>
     <ion-item>
         <ion-icon name="planet" item-left></ion-icon>
-        {{person.homeworldName}}
+        {{homeworld.name}}
     </ion-item>
     <ion-item>
         <ion-icon name="jet" item-left></ion-icon>

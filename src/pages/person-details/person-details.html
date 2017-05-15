@@ -1,13 +1,86 @@
 <ion-header>
-  <ion-navbar>
-    <button menuToggle *ngIf="!selectedItem">
+  <ion-navbar color="secondary">
+    <button menuToggle *ngIf="!person">
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Item Details</ion-title>
+    <ion-title>{{person.name}}</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
+  <ion-grid no-padding>
+    
+    <ion-row>
+      <ion-col>
+        <img style="width: 100%;" src="http://www.placecage.com/600/400">
+      </ion-col>
+    </ion-row>
+    
+    <ion-row padding>
+      <ion-col>
+        <ion-item>
+            <ion-icon *ngIf="person.gender === 'female'" name="female" item-left></ion-icon>
+            <ion-icon *ngIf="person.gender === 'male'" name="male" item-left></ion-icon>
+            <ion-icon *ngIf="person.gender === 'n/a'" name="logo-android" item-left></ion-icon>
+            <h1>{{person.name}}</h1>
+        </ion-item>
+        <ion-item>
+            <ion-icon name="planet" item-left></ion-icon>
+            {{homeworld.name}}
+        </ion-item>
+        <ion-item>
+            <ion-icon name="jet" item-left></ion-icon>
+            Starships
+            <ion-badge item-right>{{person.starships.length}}</ion-badge>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row padding>
+      <ion-col>
+        <ion-row>
+          <ion-col>
+            <h4>Vital Statistics:</h4>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <p>
+              Height: {{person.height}} cm
+            </p>
+            <p>
+              Mass: {{person.mass}} kg
+            </p>
+          </ion-col>
+          <ion-col>
+            <p>
+              Hair: {{person.hair_color | titlecase}}
+            </p>
+            <p>
+              Eyes: {{person.eye_color | titlecase}}
+            </p>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+
+    <button color="secondary" ion-button full icon-left>
+        <ion-icon name="checkmark"></ion-icon>
+        Sure
+    </button>
+
+    <button color="danger" ion-button full icon-left>
+        <ion-icon name="close"></ion-icon>
+        Nope
+    </button>
+
+    <button color="primary" ion-button full icon-left (click)="chatButtonTapped($event)">
+      <ion-icon name="chatbubbles"></ion-icon>
+      Send Subspace Transmission
+    </button>
+
+  </ion-grid>
+  
   <h3 text-center *ngIf="selectedItem">
     {{selectedItem.title}}
     <ion-icon [name]="selectedItem.icon"></ion-icon>
