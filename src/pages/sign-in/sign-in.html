@@ -2,27 +2,27 @@
 <ion-content class="content" padding>
   <ion-grid>
     <ion-row justify-content-center>
-        <ion-col col-sm-8 col-md-6 col-lg-4>
+        <ion-col col-sm-8>
             <h1 style="text-align: center; color: #44C3AA;">Sign In</h1>
             <ion-list class="list">
                 <ion-item>
-                    <ion-label color="secondary">Email</ion-label>
-                    <ion-input color="secondary" type="email"></ion-input>
+                    <ion-label color="primary">Email</ion-label>
+                    <ion-input style="color: white;" type="email"></ion-input>
                 </ion-item>
                 <ion-item>
-                    <ion-label color="secondary">Password</ion-label>
-                    <ion-input type="password"></ion-input>
+                    <ion-label color="primary">Password</ion-label>
+                    <ion-input type="password" style="color: white;"></ion-input>
                 </ion-item>
                 <ion-item>
-                    <p style="text-align: right;">forgot password?</p>
+                    <p style="text-align: right; color: #FB9720">forgot password?</p>
                 </ion-item>
             </ion-list>
             <ion-row>
                 <ion-col text-center col-5 offset-1>
-                    <button color="secondary" ion-button round outline block (click)="buttonPressed()">Sign Up</button>
+                    <button color="primary" ion-button round outline block (click)="buttonPressed()">Sign Up</button>
                 </ion-col>
                 <ion-col text-center col-5>
-                    <button color="secondary" ion-button round block (click)="buttonPressed()">Sign In</button>
+                    <button color="primary" ion-button round block (click)="buttonPressed()">Sign In</button>
                 </ion-col>
             </ion-row>
         </ion-col>

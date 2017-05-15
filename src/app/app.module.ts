@@ -10,6 +10,7 @@ import { PersonDetailsPage } from '../pages/person-details/person-details';
 
 import { SideMenuComponent } from '../components/side-menu/side-menu.component';
 import { PersonCardComponent } from '../components/person-card/person-card.component';
+import { MessageModal } from '../components/message-modal/message-modal.component';
 import { SignInService } from '../services/sign-in.service';
 import { PeopleService } from '../services/people.service';
 
@@ -23,7 +24,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     PersonDetailsPage,
     MasterListPage,
     SideMenuComponent,
-    PersonCardComponent
+    PersonCardComponent,
+    MessageModal
   ],
   imports: [
     BrowserModule,
@@ -35,7 +37,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     MyApp,
     SignInPage,
     PersonDetailsPage,
-    MasterListPage
+    MasterListPage,
+    MessageModal
   ],
   providers: [
     StatusBar,

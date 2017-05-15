@@ -24,8 +24,8 @@ $font-path: "../assets/fonts";
 // The "primary" color is the only required color in the map.
 
 $colors: (
-  primary:    #5AB1FF,
-  secondary:  #44C3AA,
+  primary:    #44C3AA,
+  secondary:  #5AB1FF,
   danger:     #FB9720,
   light:      #f4f4f4,
   dark:       #394267
@@ -62,7 +62,6 @@ $colors: (
 
 @import "ionic.theme.default";
 $infinite-scroll-loading-color: #f4f4f4;
-$text-input-highlight-color-valid: #44C3AA;
 page-master-list {
   .content {
     background-color: #394267;
