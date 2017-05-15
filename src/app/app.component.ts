@@ -3,7 +3,7 @@ import { Component, ViewChild } from '@angular/core';
 import { Platform, MenuController, Nav } from 'ionic-angular';
 
 import { SignInPage } from '../pages/sign-in/sign-in';
-import { ListPage } from '../pages/list/list';
+import { MasterListPage } from '../pages/master-list/master-list';
 import { SignInService } from '../services/sign-in.service';
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -31,7 +31,7 @@ export class MyApp {
     // set our app's pages
     this.pages = [
       { title: 'Sign In', component: SignInPage },
-      { title: 'List', component: ListPage },
+      { title: 'Master List', component: MasterListPage },
       { title: 'Chat', component: null}
     ];
   }

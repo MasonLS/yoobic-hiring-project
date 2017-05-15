@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 import { NavController, MenuController } from 'ionic-angular';
 
-import { ListPage } from '../list/list';
+import { MasterListPage } from '../master-list/master-list';
 
 @Component({
   selector: 'page-sign-in',
@@ -22,6 +22,6 @@ export class SignInPage {
   }
 
   buttonPressed(): void {
-    this.navCtrl.push(ListPage);
+    this.navCtrl.push(MasterListPage);
   }
 }
