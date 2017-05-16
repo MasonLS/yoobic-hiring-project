@@ -1,18 +1,24 @@
-import { Injectable }    from '@angular/core';
+import { Injectable } from '@angular/core';
+
+import { User } from '../user';
 
 @Injectable()
 export class SignInService {
-    private signedIn = false;
+    private user: User = null;
 
     isSignedIn(): boolean {
-        return this.signedIn;
+        return this.user !== null;
     }
 
-    signIn(): void {
-        this.signedIn = true;
+    signIn(user): void {
+        this.user = user;
     }
 
     signOut(): void {
-        this.signedIn = false;
+        this.user = null;
+    }
+
+    getSignedInUser(): User {
+        return this.user;
     }
 }

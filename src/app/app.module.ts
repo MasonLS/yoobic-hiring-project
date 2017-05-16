@@ -8,7 +8,6 @@ import { SignInPage } from '../pages/sign-in/sign-in';
 import { MasterListPage } from '../pages/master-list/master-list';
 import { PersonDetailsPage } from '../pages/person-details/person-details';
 
-import { SideMenuComponent } from '../components/side-menu/side-menu.component';
 import { PersonCardComponent } from '../components/person-card/person-card.component';
 import { MessageModal } from '../components/message-modal/message-modal.component';
 import { SignInService } from '../services/sign-in.service';
@@ -23,7 +22,6 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     SignInPage,
     PersonDetailsPage,
     MasterListPage,
-    SideMenuComponent,
     PersonCardComponent,
     MessageModal
   ],

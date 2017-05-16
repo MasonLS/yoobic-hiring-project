@@ -17,7 +17,7 @@
 
                     <ion-item>
                         <ion-label color="primary" fixed>Message</ion-label>
-                        <ion-textarea placeholder="Wish may the Force be with them!"></ion-textarea>
+                        <ion-textarea placeholder="Wish that the Force may be with them!"></ion-textarea>
                     </ion-item>
                     <ion-item>
                     </ion-item>
@@ -25,8 +25,14 @@
             </ion-col>
         </ion-row>
 
-        <button color="primary" ion-button (click)="dismiss()">Send</button>
-        <button color="danger" ion-button (click)="dismiss()">Cancel</button>
+        <button color="primary" icon-left ion-button (click)="dismiss()">
+            <ion-icon name="send"></ion-icon>
+            Send
+        </button>
+        <button color="danger" icon-left ion-button (click)="dismiss()">
+            <ion-icon name="close"></ion-icon>
+            Cancel
+        </button>
         
     </ion-grid>
 </ion-content>

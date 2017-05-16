@@ -18,21 +18,23 @@
     
     <ion-row padding>
       <ion-col>
-        <ion-item>
-            <ion-icon *ngIf="person.gender === 'female'" name="female" item-left></ion-icon>
-            <ion-icon *ngIf="person.gender === 'male'" name="male" item-left></ion-icon>
-            <ion-icon *ngIf="person.gender === 'n/a'" name="logo-android" item-left></ion-icon>
-            <h1>{{person.name}}</h1>
-        </ion-item>
-        <ion-item>
-            <ion-icon name="planet" item-left></ion-icon>
-            {{homeworld.name}}
-        </ion-item>
-        <ion-item>
-            <ion-icon name="jet" item-left></ion-icon>
-            Starships
-            <ion-badge item-right>{{person.starships.length}}</ion-badge>
-        </ion-item>
+        <ion-list no-lines>
+          <ion-item>
+              <ion-icon *ngIf="person.gender === 'female'" name="female" item-left></ion-icon>
+              <ion-icon *ngIf="person.gender === 'male'" name="male" item-left></ion-icon>
+              <ion-icon *ngIf="person.gender === 'n/a'" name="logo-android" item-left></ion-icon>
+              <h1>{{person.name}}</h1>
+          </ion-item>
+          <ion-item>
+              <ion-icon name="planet" item-left></ion-icon>
+              {{homeworld.name}}
+          </ion-item>
+          <ion-item>
+              <ion-icon name="jet" item-left></ion-icon>
+              Starships
+              <ion-badge color="secondary" item-right>{{person.starships.length}}</ion-badge>
+          </ion-item>
+        </ion-list>
       </ion-col>
     </ion-row>
 
