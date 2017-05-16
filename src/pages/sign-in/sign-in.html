@@ -11,11 +11,11 @@
             <ion-list class="list">
                 <ion-item>
                     <ion-label color="primary">Email</ion-label>
-                    <ion-input style="color: #f4f4f4;" type="email"></ion-input>
+                    <ion-input [(ngModel)]="email" style="color: #f4f4f4;" type="email"></ion-input>
                 </ion-item>
                 <ion-item>
                     <ion-label color="primary">Password</ion-label>
-                    <ion-input type="password" style="color: #f4f4f4;"></ion-input>
+                    <ion-input [(ngModel)]="password" type="password" style="color: #f4f4f4;"></ion-input>
                 </ion-item>
                 <ion-item>
                     <p style="text-align: right; color: #FB9720">forgot password?</p>

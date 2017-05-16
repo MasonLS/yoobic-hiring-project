@@ -61,19 +61,21 @@ $colors: (
 // default are overridden.
 
 @import "ionic.theme.default";
-$infinite-scroll-loading-color: #f4f4f4;
+
+$infinite-scroll-loading-color: map-get($colors, 'light');
+$text-input-highlight-color-valid: map-get($colors, 'primary');
 page-master-list {
   .content {
-    background-color: #394267;
+    background-color: map-get($colors, 'dark');
   }
 }
 page-sign-in {
   .content {
-    background-color: #394267;
+    background-color: map-get($colors, 'dark');
   }
   .list {
     ion-item {
-      background-color: #394267;
+      background-color: map-get($colors, 'dark');
     }
   }
 }
